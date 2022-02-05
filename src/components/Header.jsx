@@ -33,7 +33,7 @@ const Header = () => {
 
 
       <div className='loginButton'>
-        <button class="btn-hover color-1">GET IN</button>
+        <button className="btn-hover color-1">GET IN</button>
       </div>
 
 
