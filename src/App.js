@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 import PunkList from './components/PunkList';
 import Main from './components/Main';
+import Loader from './components/Loader'
 
 function App() {
 
@@ -26,12 +27,18 @@ function App() {
   return (
     <div className="app">
       <Header />
-      {punkListData.length > 0 && (
+      {punkListData.length > 0 ? (
         <>
           <Main  punkListData={punkListData} selectedPunk={selectedPunk} />
           <PunkList punkListData={punkListData} setSelectedPunk={setSelectedPunk} />
         </>
-      )}
+      )
+    
+    :
+
+    <Loader />
+    
+    }
     </div>
   );
 }
