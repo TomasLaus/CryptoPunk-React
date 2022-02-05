@@ -14,8 +14,12 @@ function App() {
 
   useEffect(() => {
     const getMyNfts = async () => {
-      const openSeaData = await axios.get('https://testnets-api.opensea.io/assets?asset_contract_address=0x8F43D6d8BCBAe65E803Df3944205eFca91c38ef3&order_direction=asc'
-      )
+      const openSeaData = await axios.get('https://testnets-api.opensea.io/assets?asset_contract_address=0x8F43D6d8BCBAe65E803Df3944205eFca91c38ef3&order_direction=asc', {
+        headers: {
+          "Access-Control-Allow-Origin": "*" //the token is a variable which holds the token
+        }
+      })
+      
       console.log(openSeaData.data.assets)
       setPunkListData(openSeaData.data.assets)
     }
